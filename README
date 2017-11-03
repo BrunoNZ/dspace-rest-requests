@@ -1,3 +1,27 @@
+First of all you have to edit the file "rest.cfg" with your dspace's
+url, user and password, or leave it how it is to use Dspace's demo
+site (http://demo.dspace.org/).
+
+Then, you get a token by executing:
+$ ./login
+
+And finally, execute:
+$ ./send_request.sh <TOKEN> <REQUEST_FILE> <REQUEST_TYPE : (XML or JSON)>
+
+The request's files are inside "requests" folder. Each file contains a
+sample form of each endpoind on XML and JSON.
+
+For instance, if you want to create a new community:
+./send_request.sh "69bd9f3f-c78e-4319-bad3-793dea3bccbd"
+requests/POST_0_new-communities.sh json
+
+If you're using Ruby, we're developing a Ruby Gem to interact with
+Dspace's rest api. If you're interested, the code is here:
+https://gitlab.c3sl.ufpr.br/c3sl/dspace-rest-client
+
+- from http://dspace.2283337.n4.nabble.com/how-post-object-in-REST-API-to-dspace-td4677786.html
+
+
 ==========================================================================
 VERB  ACTION ------------------------------------> Request Descriptor File
 ==========================================================================
